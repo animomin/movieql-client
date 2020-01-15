@@ -7,6 +7,25 @@ export const HOME_PAGE = gql`
       title
       genres
       rating
+      medium_cover_image
+    }
+  }
+`;
+
+export const MOVIE_DETAILS = gql`
+  query getMovieDetail($movieId: Int!) {
+    movie(id: $movieId) {
+      title
+      rating
+      genres
+      language
+      medium_cover_image
+      description_intro
+    }
+    suggestions(id: $movieId) {
+      medium_cover_image
+      title
+      rating
     }
   }
 `;
